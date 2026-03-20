@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Ops Tree Service | Arlington, TX | (214) 263-2976</title>
+    <meta name="description" content="Tree Ops – Arlington, TX's most trusted tree service. Tree trimming, removal, stump grinding, storm damage, and landscaping. 5-star rated across Google, HomeAdvisor & Yelp. Free estimates. Call (214) 263-2976.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tree Ops Tree Service | Arlington, TX">
+    <meta property="og:description" content="Professional tree trimming, removal, stump grinding & storm damage response in Arlington, TX. 5-star rated. Free estimates. (214) 263-2976.">
+    <meta property="og:image" content="/images/1.webp">
+    <meta property="og:url" content="https://treeops.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tree Ops Tree Service">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/logos/logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics Placeholder -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Tree Ops",
+      "image": "https://treeops.com/logos/logo.png",
+      "telephone": "(214) 263-2976",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2001 Rutland Dr",
+        "addressLocality": "Arlington",
+        "addressRegion": "TX",
+        "postalCode": "76002",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.6680,
+        "longitude": -97.1191
+      },
+      "url": "https://treeops.com",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "80"
+      },
+      "description": "Professional tree trimming, removal, stump grinding, storm damage response, and landscaping services serving Arlington and all of DFW.",
+      "areaServed": ["Arlington","Grand Prairie","Fort Worth","Mansfield","Kennedale","Euless","Bedford","Hurst","Irving","Burleson","Crowley","Duncanville","Cedar Hill","Midlothian"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tree Services",
+        "itemListElement": [
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tree Trimming & Pruning"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tree Removal"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Stump Grinding & Removal"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Storm Damage Response"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Shrub Care & Landscaping"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Firewood"}}
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        /* ===================== CSS VARIABLES ===================== */
+        :root {
+            --green:       #39FF14;
+            --green-dim:   #2db30f;
+            --dark:        #0a0a0a;
+            --dark-2:      #101010;
+            --dark-3:      #181818;
+            --dark-4:      #202020;
+            --steel:       #484848;
+            --steel-light: #888;
+            --white:       #f0f0f0;
+            --white-dim:   #b8b8b8;
+            --font-head:   'Bebas Neue', sans-serif;
+            --font-body:   'Outfit', sans-serif;
+            --nav-h:       68px;
+        }
+
+        /* ===================== RESET ===================== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        /* Subtle noise grain */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9000;
+            opacity: 0.35;
+        }
+
+        /* ===================== NAV ===================== */
+        #navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-h);
+            background: rgba(10,10,10,0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(57,255,20,0.12);
+            z-index: 900;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            gap: 1.5rem;
+        }
+        .nav-brand {
+            font-family: var(--font-head);
+            font-size: 1.9rem;
+            color: var(--green);
+            letter-spacing: 0.06em;
+            flex-shrink: 0;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 0.1rem;
+            flex: 1;
+        }
+        .nav-links a {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            padding: 0.35rem 0.6rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--green); }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: var(--dark-3);
+            border: 1px solid var(--steel);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .lang-btn {
+            padding: 0.28rem 0.6rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--steel-light);
+            transition: all 0.2s;
+        }
+        .lang-btn.active { background: var(--green); color: var(--dark); }
+        .lang-sep { width: 1px; background: var(--steel); align-self: stretch; }
+
+        .nav-phone {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--green);
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+        .nav-cta {
+            background: var(--green);
+            color: var(--dark);
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.48rem 1rem;
+            border-radius: 3px;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .nav-cta:hover { background: var(--green-dim); transform: translateY(-1px); }
+
+        /* ===================== HAMBURGER ===================== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            padding: 7px;
+            cursor: pointer;
+            z-index: 1100;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--green);
+            border-radius: 2px;
+            transform-origin: center;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile Overlay — drops below navbar */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: var(--nav-h);
+            left: 0;
+            right: 0;
+            background: rgba(10,10,10,0.98);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid rgba(57,255,20,0.2);
+            z-index: 899;
+            flex-direction: column;
+            padding: 1.2rem 2rem 1.8rem;
+            transform: translateY(-8px);
+            opacity: 0;
+            transition: transform 0.28s ease-out, opacity 0.28s ease-out;
+            pointer-events: none;
+        }
+        .mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu ul { list-style: none; width: 100%; }
+        .mobile-menu ul li { border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .mobile-menu ul li a {
+            display: flex;
+            align-items: center;
+            padding: 0.85rem 0;
+            font-family: var(--font-head);
+            font-size: 1.6rem;
+            color: var(--white);
+            letter-spacing: 0.04em;
+            min-height: 48px;
+            transition: color 0.2s;
+        }
+        .mobile-menu ul li a:hover { color: var(--green); }
+        .mobile-bottom {
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .mobile-phone { font-size: 1.1rem; font-weight: 700; color: var(--green); }
+        .mobile-cta {
+            display: inline-block;
+            background: var(--green);
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.65rem 1.3rem;
+            border-radius: 3px;
+        }
+
+        /* ===================== HERO ===================== */
+        #hero {
+            position: relative;
+            height: 100vh;
+            min-height: 640px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            padding: calc(var(--nav-h) + 1.5rem) 1.5rem 2rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('/images/1.webp');
+            background-size: cover;
+            background-position: center 30%;
+            animation: kenBurns 20s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+        @keyframes kenBurns {
+            0%   { transform: scale(1)    translateX(0); }
+            100% { transform: scale(1.14) translateX(-2%); }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                rgba(0,0,0,0.78) 0%,
+                rgba(0,0,0,0.55) 45%,
+                rgba(0,0,0,0.88) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 860px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .hero-logo {
+            width: min(200px, 38vw);
+            filter: drop-shadow(0 0 40px rgba(57,255,20,0.35));
+            animation: floatIn 0.9s ease-out both;
+        }
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(-24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero-headline {
+            font-family: var(--font-head);
+            font-size: clamp(3rem, 9vw, 6.5rem);
+            line-height: 0.92;
+            letter-spacing: 0.02em;
+            animation: fadeUp 0.8s 0.25s ease-out both;
+        }
+        .hero-headline .g { color: var(--green); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero-sub {
+            font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+            color: var(--white-dim);
+            max-width: 540px;
+            font-weight: 400;
+            animation: fadeUp 0.8s 0.45s ease-out both;
+        }
+        .hero-cta-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeUp 0.8s 0.65s ease-out both;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--green);
+            color: var(--dark);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.9rem 2rem;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover { background: var(--green-dim); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(57,255,20,0.28); }
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.9rem 2rem;
+            border-radius: 3px;
+            border: 2px solid rgba(255,255,255,0.35);
+            transition: all 0.2s;
+        }
+        .btn-outline:hover { border-color: var(--green); color: var(--green); }
+
+        /* Hero trust row */
+        .hero-trust {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeUp 0.8s 0.85s ease-out both;
+        }
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.15rem;
+        }
+        .trust-score {
+            font-family: var(--font-head);
+            font-size: 1.7rem;
+            color: var(--green);
+            line-height: 1;
+        }
+        .trust-stars { color: var(--green); font-size: 0.85rem; letter-spacing: 0.08em; }
+        .trust-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .trust-divider {
+            width: 1px;
+            height: 44px;
+            background: rgba(255,255,255,0.18);
+            align-self: center;
+        }
+
+        /* ===================== TRUST BAR SECTION ===================== */
+        #trust-bar {
+            background: var(--dark-3);
+            border-top: 1px solid rgba(57,255,20,0.15);
+            border-bottom: 1px solid rgba(57,255,20,0.15);
+            padding: 2.8rem 1.5rem;
+        }
+        #trust-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+        .tb-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.22rem;
+            padding: 0.5rem 3rem;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        .tb-item:last-child { border-right: none; }
+        .tb-score {
+            font-family: var(--font-head);
+            font-size: 3.2rem;
+            color: var(--green);
+            line-height: 1;
+        }
+        .tb-stars { color: var(--green); font-size: 1rem; letter-spacing: 0.1em; }
+        .tb-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-top: 0.1rem;
+        }
+        .tb-sub {
+            font-size: 0.68rem;
+            color: var(--steel-light);
+            letter-spacing: 0.06em;
+        }
+        @media (max-width: 680px) {
+            .tb-item { padding: 0.8rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+            .tb-item:last-child { border-bottom: none; }
+            #trust-bar .container { flex-direction: column; gap: 0; }
+        }
+
+        section { padding: 6rem 1.5rem; }
+        .container { max-width: 1180px; margin: 0 auto; }
+        .sec-label {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 0.6rem;
+        }
+        .sec-title {
+            font-family: var(--font-head);
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            line-height: 0.94;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.9rem;
+        }
+        .sec-sub {
+            font-size: 1rem;
+            color: var(--white-dim);
+            max-width: 580px;
+            margin-bottom: 3rem;
+        }
+        .green-bar { width: 46px; height: 3px; background: var(--green); margin-bottom: 1.8rem; }
+
+        /* ===================== SERVICES ===================== */
+        #services { background: var(--dark-2); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            border: 1px solid rgba(57,255,20,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            gap: 1px;
+            background: rgba(57,255,20,0.07);
+        }
+        .svc-card {
+            background: var(--dark-3);
+            padding: 2.4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 0;
+            background: var(--green);
+            transition: height 0.35s ease;
+        }
+        .svc-card:hover { background: var(--dark-4); }
+        .svc-card:hover::before { height: 100%; }
+        .svc-icon { font-size: 2rem; margin-bottom: 0.9rem; display: block; }
+        .svc-title {
+            font-family: var(--font-head);
+            font-size: 1.75rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.65rem;
+        }
+        .svc-desc { font-size: 0.92rem; color: var(--white-dim); line-height: 1.72; }
+        .svc-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--green);
+            border: 1px solid rgba(57,255,20,0.3);
+            padding: 0.22rem 0.55rem;
+            border-radius: 2px;
+        }
+
+        /* Also offer strip */
+        .also-offer {
+            margin-top: 2.5rem;
+            padding: 1.4rem 1.8rem;
+            background: var(--dark-3);
+            border: 1px solid rgba(57,255,20,0.12);
+            border-radius: 4px;
+        }
+        .also-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--green);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .also-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+        .also-tag {
+            font-size: 0.78rem;
+            color: var(--white-dim);
+            background: var(--dark-4);
+            padding: 0.28rem 0.65rem;
+            border-radius: 2px;
+            border: 1px solid var(--steel);
+        }
+
+        /* ===================== REVIEWS ===================== */
+        #reviews { background: var(--dark); }
+        .platform-bar {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1.5rem 2rem;
+            background: var(--dark-3);
+            border: 1px solid rgba(57,255,20,0.1);
+            border-radius: 4px;
+            margin-bottom: 3rem;
+        }
+        .pb-item { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+        .pb-name { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--steel-light); }
+        .pb-score { font-family: var(--font-head); font-size: 2.4rem; color: var(--green); line-height: 1; }
+        .pb-stars { color: var(--green); font-size: 0.82rem; letter-spacing: 0.08em; }
+        .pb-count { font-size: 0.68rem; color: var(--steel-light); }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.5rem;
+        }
+        .rv-card {
+            background: var(--dark-3);
+            border: 1px solid rgba(57,255,20,0.1);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .rv-card:hover { border-color: rgba(57,255,20,0.28); transform: translateY(-5px); }
+        .rv-qmark { font-family: var(--font-head); font-size: 5rem; color: rgba(57,255,20,0.13); line-height: 0.55; margin-bottom: 0.6rem; }
+        .rv-stars { color: var(--green); font-size: 0.95rem; margin-bottom: 0.9rem; letter-spacing: 0.1em; }
+        .rv-text { font-size: 0.92rem; color: var(--white-dim); line-height: 1.74; margin-bottom: 1.4rem; font-style: italic; }
+        .rv-author { font-weight: 700; color: var(--white); font-size: 0.88rem; }
+        .rv-meta { font-size: 0.72rem; color: var(--steel-light); margin-top: 0.18rem; }
+        .rv-platform {
+            display: inline-block;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--green);
+            border: 1px solid rgba(57,255,20,0.22);
+            padding: 0.18rem 0.48rem;
+            border-radius: 2px;
+            margin-top: 0.7rem;
+        }
+
+        /* ===================== ABOUT ===================== */
+        #about { background: var(--dark-2); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .about-img-wrap { position: relative; }
+        .about-img {
+            width: 100%; height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(15%) contrast(1.05);
+        }
+        .about-badge {
+            position: absolute;
+            bottom: -1.4rem; right: -1.4rem;
+            background: var(--green);
+            color: var(--dark);
+            padding: 1.4rem;
+            text-align: center;
+            font-family: var(--font-head);
+            border-radius: 3px;
+            box-shadow: 0 8px 30px rgba(57,255,20,0.35);
+        }
+        .badge-num { font-size: 2.8rem; line-height: 1; display: block; }
+        .badge-lbl { font-size: 0.72rem; font-family: var(--font-body); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+        .about-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1.5rem 0; }
+        .pill {
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: var(--green);
+            border: 1px solid rgba(57,255,20,0.28);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            letter-spacing: 0.04em;
+        }
+        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 1.5rem; }
+        .a-stat {
+            background: var(--dark-3);
+            border: 1px solid rgba(57,255,20,0.1);
+            padding: 1.1rem 1.2rem;
+            border-radius: 3px;
+        }
+        .a-stat-num { font-family: var(--font-head); font-size: 2rem; color: var(--green); line-height: 1; display: block; }
+        .a-stat-lbl { font-size: 0.72rem; color: var(--white-dim); margin-top: 0.22rem; }
+
+        /* ===================== GALLERY ===================== */
+        #gallery { background: var(--dark); }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 280px;
+            gap: 4px;
+        }
+        .g-item { overflow: hidden; cursor: pointer; position: relative; }
+        .g-item.wide { grid-column: span 2; }
+        .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .g-item:hover img { transform: scale(1.06); }
+        .g-overlay {
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            display: flex;
+            align-items: flex-end;
+            padding: 0.9rem;
+            transition: background 0.3s;
+        }
+        .g-item:hover .g-overlay { background: rgba(0,0,0,0.4); }
+        .g-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white);
+            background: rgba(10,10,10,0.85);
+            padding: 0.28rem 0.55rem;
+            border-radius: 2px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .g-item:hover .g-label { opacity: 1; transform: translateY(0); }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.96);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+        }
+        #lightbox.open { display: flex; }
+        #lightbox img { max-width: 90vw; max-height: 86vh; object-fit: contain; border-radius: 3px; cursor: default; }
+        .lb-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: var(--green);
+            color: var(--dark);
+            border: none;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* ===================== SERVICE AREA ===================== */
+        #service-area { background: var(--dark-2); }
+        .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: start; }
+        .city-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+        .city-tag {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            color: var(--white-dim);
+            padding: 0.55rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .city-tag::before { content: '▸'; color: var(--green); font-size: 0.65rem; }
+        .area-callout {
+            background: var(--dark-3);
+            border: 1px solid rgba(57,255,20,0.18);
+            border-left: 4px solid var(--green);
+            padding: 2.2rem;
+            border-radius: 3px;
+        }
+        .area-callout h3 { font-family: var(--font-head); font-size: 2rem; margin-bottom: 0.75rem; }
+        .area-callout p { color: var(--white-dim); font-size: 0.93rem; line-height: 1.72; }
+        .emerg-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(57,255,20,0.08);
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 0.6rem 1.1rem;
+            border-radius: 3px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 1.4rem;
+            transition: background 0.2s;
+        }
+        .emerg-btn:hover { background: rgba(57,255,20,0.16); }
+
+        /* ===================== FAQ ===================== */
+        #faq { background: var(--dark); }
+        .faq-list { max-width: 780px; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .faq-q {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 1.4rem 0;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            transition: color 0.2s;
+        }
+        .faq-q:hover { color: var(--green); }
+        .faq-icon {
+            color: var(--green);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-ans { max-height: 0; overflow: hidden; transition: max-height 0.42s ease; }
+        .faq-item.open .faq-ans { max-height: 320px; }
+        .faq-ans-inner { padding-bottom: 1.4rem; color: var(--white-dim); font-size: 0.93rem; line-height: 1.78; }
+
+        /* ===================== FOOTER / CONTACT ===================== */
+        #contact { background: var(--dark-2); border-top: 1px solid rgba(57,255,20,0.12); }
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+
+        /* Form */
+        .form-group { margin-bottom: 1rem; }
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--steel-light);
+            margin-bottom: 0.38rem;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: var(--dark-3);
+            border: 1px solid var(--steel);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            padding: 0.72rem 1rem;
+            border-radius: 3px;
+            outline: none;
+            transition: border-color 0.2s;
+            -webkit-appearance: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus { border-color: var(--green); }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: var(--steel); }
+        .form-group select option { background: var(--dark-3); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-submit {
+            width: 100%;
+            background: var(--green);
+            color: var(--dark);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 1rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 0.4rem;
+            transition: background 0.2s;
+        }
+        .form-submit:hover { background: var(--green-dim); }
+
+        /* Footer info col */
+        .footer-info { display: flex; flex-direction: column; gap: 2rem; }
+        .f-logo { font-family: var(--font-head); font-size: 3.2rem; color: var(--green); letter-spacing: 0.05em; line-height: 1; }
+        .f-tagline { font-size: 0.88rem; color: var(--white-dim); margin-top: 0.2rem; }
+        .f-nap { display: flex; flex-direction: column; gap: 0.55rem; }
+        .nap-row { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.93rem; color: var(--white-dim); }
+        .nap-icon { color: var(--green); flex-shrink: 0; margin-top: 2px; }
+        .f-phone { color: var(--green); font-weight: 700; font-size: 1.35rem; }
+        .f-social { display: flex; gap: 0.6rem; }
+        .social-link {
+            width: 40px; height: 40px;
+            background: var(--dark-3);
+            border: 1px solid var(--steel);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--white-dim);
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .social-link:hover { border-color: var(--green); color: var(--green); }
+        .f-cta-box {
+            padding: 1.5rem;
+            background: var(--dark-3);
+            border: 1px solid rgba(57,255,20,0.12);
+            border-radius: 3px;
+        }
+        .f-cta-box p { font-size: 0.78rem; color: var(--steel-light); margin-bottom: 0.4rem; }
+        .f-cta-box a { font-family: var(--font-head); font-size: 1.8rem; color: var(--green); letter-spacing: 0.04em; }
+        .f-cta-box small { display: block; font-size: 0.72rem; color: var(--steel-light); margin-top: 0.2rem; }
+
+        .footer-bottom {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 0.78rem;
+            color: var(--steel-light);
+        }
+        .footer-bottom a { color: var(--steel-light); text-decoration: underline; text-underline-offset: 3px; }
+        .footer-bottom a:hover { color: var(--green); }
+        .footer-bottom-links { display: flex; gap: 1rem; }
+
+        /* ===================== SCROLL REVEAL ===================== */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 900px) {
+            .about-grid, .footer-grid, .area-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-img { height: 300px; }
+            .about-badge { right: 0; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; }
+            .g-item.wide { grid-column: span 2; }
+        }
+        @media (max-width: 1024px) {
+            .nav-links, .nav-cta, .nav-phone { display: none; }
+            .hamburger { display: flex; }
+            .mobile-menu { display: flex; }
+            section { padding: 4rem 1.2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 520px) {
+            .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+            .g-item.wide { grid-column: span 1; }
+            .city-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
+            .platform-bar { gap: 1.2rem; }
+            .trust-divider { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<header id="navbar" role="banner">
+    <span class="nav-brand">TREE OPS</span>
+
+    <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="#services"     data-en="Services"     data-es="Servicios">Services</a></li>
+        <li><a href="#reviews"      data-en="Reviews"      data-es="Reseñas">Reviews</a></li>
+        <li><a href="#about"        data-en="About"        data-es="Nosotros">About</a></li>
+        <li><a href="#gallery"      data-en="Gallery"      data-es="Galería">Gallery</a></li>
+        <li><a href="#service-area" data-en="Service Area" data-es="Cobertura">Service Area</a></li>
+        <li><a href="#faq"          data-en="FAQ"          data-es="Preguntas">FAQ</a></li>
+        <li><a href="#contact"      data-en="Contact"      data-es="Contacto">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language selection">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
+            <div class="lang-sep"></div>
+            <button class="lang-btn" id="btn-es" onclick="setLang('es')" aria-pressed="false">ES</button>
+        </div>
+        <a href="tel:2142632976" class="nav-phone">📞 (214) 263-2976</a>
+        <a href="#contact" class="nav-cta" data-en="Free Estimate" data-es="Estimación Gratis">Free Estimate</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- Mobile Overlay — drops below navbar -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <nav role="navigation" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="#services"     data-en="Services"     data-es="Servicios">Services</a></li>
+            <li><a href="#reviews"      data-en="Reviews"      data-es="Reseñas">Reviews</a></li>
+            <li><a href="#about"        data-en="About"        data-es="Nosotros">About</a></li>
+            <li><a href="#gallery"      data-en="Gallery"      data-es="Galería">Gallery</a></li>
+            <li><a href="#service-area" data-en="Service Area" data-es="Cobertura">Service Area</a></li>
+            <li><a href="#faq"          data-en="FAQ"          data-es="Preguntas">FAQ</a></li>
+            <li><a href="#contact"      data-en="Contact"      data-es="Contacto">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-bottom">
+        <a href="tel:2142632976" class="mobile-phone">📞 (214) 263-2976</a>
+        <a href="#contact" class="mobile-cta" data-en="Get a Free Estimate" data-es="Obtén una Estimación Gratis">Get a Free Estimate</a>
+    </div>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero" aria-label="Hero">
+    <div class="hero-bg" role="img" aria-label="Tree Ops crew working on a massive live oak in Arlington TX, American flag visible"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <img src="/logos/logo.png" alt="Tree Ops Tree Service Logo" class="hero-logo">
+
+        <h1 class="hero-headline">
+            <span data-en="Arlington's" data-es="El Servicio de">Arlington's</span><br>
+            <span class="g" data-en="Tree Service" data-es="Árboles #1">Tree Service</span><br>
+            <span data-en="Experts" data-es="de Arlington">Experts</span>
+        </h1>
+
+        <p class="hero-sub"
+           data-en="Professional tree trimming, removal, stump grinding, and storm damage response for DFW homeowners. 11 years of experience. Free estimates."
+           data-es="Poda, remoción, eliminación de tocones y respuesta a tormentas para hogares del DFW. 11 años de experiencia. Estimaciones gratuitas.">
+            Professional tree trimming, removal, stump grinding, and storm damage response for DFW homeowners. 11 years of experience. Free estimates.
+        </p>
+
+        <div class="hero-cta-row">
+            <a href="#contact" class="btn-primary" data-en="Get a Free Estimate" data-es="Obtén una Estimación Gratis">Get a Free Estimate</a>
+            <a href="tel:2142632976" class="btn-outline" data-en="Call (214) 263-2976" data-es="Llama (214) 263-2976">Call (214) 263-2976</a>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== TRUST BAR ==================== -->
+<section id="trust-bar" aria-label="Trust indicators">
+    <div class="container">
+        <div class="tb-item">
+            <span class="tb-score">5.0</span>
+            <span class="tb-stars">★★★★★</span>
+            <span class="tb-label">Google Reviews</span>
+            <span class="tb-sub">33 Reviews</span>
+        </div>
+        <div class="tb-item">
+            <span class="tb-score">5.0</span>
+            <span class="tb-stars">★★★★★</span>
+            <span class="tb-label">HomeAdvisor</span>
+            <span class="tb-sub">44 Reviews</span>
+        </div>
+        <div class="tb-item">
+            <span class="tb-score">5.0</span>
+            <span class="tb-stars">★★★★★</span>
+            <span class="tb-label">Yelp</span>
+            <span class="tb-sub">3 Reviews</span>
+        </div>
+        <div class="tb-item">
+            <span class="tb-score">11+</span>
+            <span class="tb-stars" style="font-size:0.7rem;letter-spacing:0.04em;color:var(--steel-light)">— — — — —</span>
+            <span class="tb-label" data-en="Years Experience" data-es="Años de Experiencia">Years Experience</span>
+            <span class="tb-sub" data-en="Serving DFW" data-es="Sirviendo el DFW">Serving DFW</span>
+        </div>
+        <div class="tb-item">
+            <span class="tb-score" style="font-size:2.4rem">🚨</span>
+            <span class="tb-stars" style="font-size:0.72rem;letter-spacing:0.08em;color:var(--green)">AVAILABLE NOW</span>
+            <span class="tb-label" data-en="Emergency Service" data-es="Servicio de Emergencia">Emergency Service</span>
+            <span class="tb-sub" data-en="7 Days a Week" data-es="7 Días a la Semana">7 Days a Week</span>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section id="services">
+    <div class="container">
+        <span class="sec-label" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</span>
+        <h2 class="sec-title" data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+        <div class="green-bar"></div>
+        <p class="sec-sub"
+           data-en="From routine maintenance to emergency storm response — every job gets done right, on time, and on budget."
+           data-es="Desde mantenimiento rutinario hasta emergencias — cada trabajo se hace bien, a tiempo y dentro del presupuesto.">
+            From routine maintenance to emergency storm response — every job gets done right, on time, and on budget.
+        </p>
+
+        <div class="services-grid reveal">
+            <div class="svc-card">
+                <span class="svc-icon">🌿</span>
+                <h3 class="svc-title" data-en="Tree Trimming & Pruning" data-es="Poda y Recorte">Tree Trimming & Pruning</h3>
+                <p class="svc-desc"
+                   data-en="Precision trimming to improve the health, structure, and appearance of your trees. We work to your vision — and leave the yard cleaner than we found it."
+                   data-es="Poda de precisión para mejorar la salud, estructura y apariencia de sus árboles. Trabajamos según su visión y dejamos el jardín más limpio que como lo encontramos.">
+                    Precision trimming to improve the health, structure, and appearance of your trees. We work to your vision — and leave the yard cleaner than we found it.
+                </p>
+                <span class="svc-tag" data-en="Most Popular" data-es="Más Popular">Most Popular</span>
+            </div>
+
+            <div class="svc-card">
+                <span class="svc-icon">🪓</span>
+                <h3 class="svc-title" data-en="Tree Removal" data-es="Remoción de Árboles">Tree Removal</h3>
+                <p class="svc-desc"
+                   data-en="Safe, efficient removal of dead, diseased, or hazardous trees. Large or small — we haul everything away and restore your property."
+                   data-es="Remoción segura y eficiente de árboles muertos, enfermos o peligrosos. Grandes o pequeños — nos llevamos todo y restauramos su propiedad.">
+                    Safe, efficient removal of dead, diseased, or hazardous trees. Large or small — we haul everything away and restore your property.
+                </p>
+                <span class="svc-tag" data-en="Free Estimate" data-es="Estimación Gratis">Free Estimate</span>
+            </div>
+
+            <div class="svc-card">
+                <span class="svc-icon">⚙️</span>
+                <h3 class="svc-title" data-en="Stump Grinding" data-es="Eliminación de Tocones">Stump Grinding</h3>
+                <p class="svc-desc"
+                   data-en="Stumps ground well below grade — no eyesore, no tripping hazard, no regrowth. We clear all debris and return your yard to a clean, usable space."
+                   data-es="Tocones eliminados bien por debajo del suelo — sin obstáculos, sin peligros, sin rebrotes. Limpiamos todos los escombros y devolvemos su jardín a un espacio limpio y utilizable.">
+                    Stumps ground well below grade — no eyesore, no tripping hazard, no regrowth. We clear all debris and return your yard to a clean, usable space.
+                </p>
+                <span class="svc-tag" data-en="Same-Day Available" data-es="Disponible el Mismo Día">Same-Day Available</span>
+            </div>
+
+            <div class="svc-card">
+                <span class="svc-icon">⚡</span>
+                <h3 class="svc-title" data-en="Storm Damage Response" data-es="Respuesta a Tormentas">Storm Damage Response</h3>
+                <p class="svc-desc"
+                   data-en="DFW storms don't wait — neither do we. Emergency response for fallen trees, split limbs, and hazardous debris. We move fast and secure your property."
+                   data-es="Las tormentas del DFW no esperan — nosotros tampoco. Respuesta de emergencia para árboles caídos, ramas partidas y escombros peligrosos.">
+                    DFW storms don't wait — neither do we. Emergency response for fallen trees, split limbs, and hazardous debris. We move fast and secure your property.
+                </p>
+                <span class="svc-tag" data-en="Emergency Service" data-es="Servicio de Emergencia">Emergency Service</span>
+            </div>
+
+            <div class="svc-card">
+                <span class="svc-icon">🌱</span>
+                <h3 class="svc-title" data-en="Shrub Care & Landscaping" data-es="Arbustos y Paisajismo">Shrub Care & Landscaping</h3>
+                <p class="svc-desc"
+                   data-en="Sculpting, shaping, planting, and removal for shrubs and landscaping. From large oaks to front-entry hedges — we take the whole yard seriously."
+                   data-es="Escultura, modelado, plantación y remoción de arbustos y paisajismo. Desde grandes robles hasta setos de entrada — tomamos todo el jardín en serio.">
+                    Sculpting, shaping, planting, and removal for shrubs and landscaping. From large oaks to front-entry hedges — we take the whole yard seriously.
+                </p>
+                <span class="svc-tag" data-en="Full-Yard Service" data-es="Servicio Completo">Full-Yard Service</span>
+            </div>
+
+            <div class="svc-card">
+                <span class="svc-icon">🪵</span>
+                <h3 class="svc-title" data-en="Firewood" data-es="Leña">Firewood</h3>
+                <p class="svc-desc"
+                   data-en="Quality seasoned firewood available for delivery or pickup. Ask for Monte — Arlington's most reliable firewood source, two years running."
+                   data-es="Leña curada de calidad disponible para entrega o recogida. Pregunte por Monte — la fuente de leña más confiable de Arlington, por dos años consecutivos.">
+                    Quality seasoned firewood available for delivery or pickup. Ask for Monte — Arlington's most reliable firewood source, two years running.
+                </p>
+                <span class="svc-tag" data-en="Delivery Available" data-es="Entrega Disponible">Delivery Available</span>
+            </div>
+        </div>
+
+        <div class="also-offer reveal">
+            <span class="also-label" data-en="We Also Handle" data-es="También Ofrecemos">We Also Handle</span>
+            <div class="also-tags">
+                <span class="also-tag" data-en="Irrigation Design & Repair" data-es="Diseño y Reparación de Irrigación">Irrigation Design & Repair</span>
+                <span class="also-tag" data-en="Lawn Care" data-es="Cuidado del Césped">Lawn Care</span>
+                <span class="also-tag" data-en="Landscape Design & Construction" data-es="Diseño y Construcción de Paisaje">Landscape Design & Construction</span>
+                <span class="also-tag" data-en="Disease & Insect Management" data-es="Manejo de Enfermedades e Insectos">Disease & Insect Management</span>
+                <span class="also-tag" data-en="Earthmoving & Regrading" data-es="Movimiento de Tierra">Earthmoving & Regrading</span>
+                <span class="also-tag" data-en="Shrub Transplanting" data-es="Trasplante de Arbustos">Shrub Transplanting</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== REVIEWS ==================== -->
+<section id="reviews">
+    <div class="container">
+        <span class="sec-label" data-en="What Customers Say" data-es="Lo Que Dicen los Clientes">What Customers Say</span>
+        <h2 class="sec-title" data-en="5 Stars. Every Time." data-es="5 Estrellas. Siempre.">5 Stars. Every Time.</h2>
+        <div class="green-bar"></div>
+
+        <div class="platform-bar reveal">
+            <div class="pb-item">
+                <span class="pb-name">Google</span>
+                <span class="pb-score">5.0</span>
+                <span class="pb-stars">★★★★★</span>
+                <span class="pb-count">33 reviews</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="pb-item">
+                <span class="pb-name">HomeAdvisor</span>
+                <span class="pb-score">5.0</span>
+                <span class="pb-stars">★★★★★</span>
+                <span class="pb-count">44 reviews</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="pb-item">
+                <span class="pb-name">Yelp</span>
+                <span class="pb-score">5.0</span>
+                <span class="pb-stars">★★★★★</span>
+                <span class="pb-count">3 reviews</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="pb-item">
+                <span class="pb-name" data-en="Combined" data-es="Total">Combined</span>
+                <span class="pb-score">80+</span>
+                <span class="pb-stars" style="font-size:0.6rem;letter-spacing:0.05em">PERFECT SCORE</span>
+                <span class="pb-count" data-en="5-Star Reviews" data-es="Reseñas de 5 Estrellas">5-Star Reviews</span>
+            </div>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="rv-card reveal">
+                <div class="rv-qmark">"</div>
+                <div class="rv-stars">★★★★★</div>
+                <p class="rv-text">No payment was expected nor accepted until the last detail was completed. I have dealt with businesses of this nature before and not once did I feel I was not being consulted by a professional. Words cannot describe how pleased I am.</p>
+                <div class="rv-author">GitchoHand O.</div>
+                <div class="rv-meta">Arlington, TX · Google Review</div>
+                <span class="rv-platform">Google</span>
+            </div>
+
+            <div class="rv-card reveal">
+                <div class="rv-qmark">"</div>
+                <div class="rv-stars">★★★★★</div>
+                <p class="rv-text">Monte and his crew took great care of us — cleaned up the whole yard, cut the tree into firewood, stacked it for us, and ground the stump well below grade. Would definitely recommend and use again.</p>
+                <div class="rv-author">Jake H.</div>
+                <div class="rv-meta">Arlington, TX · Google Review</div>
+                <span class="rv-platform">Google</span>
+            </div>
+
+            <div class="rv-card reveal">
+                <div class="rv-qmark">"</div>
+                <div class="rv-stars">★★★★★</div>
+                <p class="rv-text">David and his crew clean up everything to resort-type standards after the job is complete. He also follows up when preventative maintenance is due so I don't end up with an overgrown mess in a couple of years.</p>
+                <div class="rv-author">Jeanette B.</div>
+                <div class="rv-meta">Arlington, TX · Google Review</div>
+                <span class="rv-platform">Google</span>
+            </div>
+
+            <div class="rv-card reveal">
+                <div class="rv-qmark">"</div>
+                <div class="rv-stars">★★★★★</div>
+                <p class="rv-text">I already had 2 quotes. David said "the 3rd one is the charm" — and he was right. His bid was the lowest of the three. The crew was industrious and professional. I watched on my security cams — outstanding work.</p>
+                <div class="rv-author">Warren M.</div>
+                <div class="rv-meta">Arlington, TX · HomeAdvisor Review</div>
+                <span class="rv-platform">HomeAdvisor</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-img-wrap reveal">
+                <img src="/images/9.webp" alt="Beautifully maintained trees on a lakeside Arlington TX property serviced by Tree Ops" class="about-img" loading="lazy">
+                <div class="about-badge">
+                    <span class="badge-num">11+</span>
+                    <span class="badge-lbl" data-en="Years Serving DFW" data-es="Años en el DFW">Years Serving DFW</span>
+                </div>
+            </div>
+            <div class="reveal">
+                <span class="sec-label" data-en="Our Story" data-es="Nuestra Historia">Our Story</span>
+                <h2 class="sec-title" data-en="Rooted in Arlington" data-es="Arraigados en Arlington">Rooted in Arlington</h2>
+                <div class="green-bar"></div>
+                <p style="color:var(--white-dim);font-size:1rem;line-height:1.82;margin-bottom:1.2rem"
+                   data-en="Tree Ops was built by David Foote right here in Arlington, TX — on one promise: every job gets done right, on time, and on budget. No shortcuts. No payment until the last detail is finished."
+                   data-es="Tree Ops fue construido por David Foote aquí mismo en Arlington, TX — con una promesa: cada trabajo se hace bien, a tiempo y dentro del presupuesto. Sin atajos. Sin pago hasta que el último detalle esté terminado.">
+                    Tree Ops was built by David Foote right here in Arlington, TX — on one promise: every job gets done right, on time, and on budget. No shortcuts. No payment until the last detail is finished.
+                </p>
+                <p style="color:var(--white-dim);font-size:1rem;line-height:1.82;margin-bottom:1.4rem"
+                   data-en="Over 11 years, 80+ perfect five-star reviews across Google, HomeAdvisor, and Yelp. Whether it's one tree or a full acre — David and his crew show up on time, communicate every step, and leave your yard better than they found it."
+                   data-es="Más de 11 años, más de 80 reseñas perfectas de cinco estrellas en Google, HomeAdvisor y Yelp. Ya sea un árbol o una hectárea completa — David y su equipo llegan a tiempo, comunican cada paso y dejan su jardín mejor de lo que lo encontraron.">
+                    Over 11 years, 80+ perfect five-star reviews across Google, HomeAdvisor, and Yelp. Whether it's one tree or a full acre — David and his crew show up on time, communicate every step, and leave your yard better than they found it.
+                </p>
+
+                <div class="about-pills">
+                    <span class="pill" data-en="✓ Licensed & Insured" data-es="✓ Licenciado y Asegurado">✓ Licensed & Insured</span>
+                    <span class="pill" data-en="✓ Free Estimates" data-es="✓ Estimaciones Gratis">✓ Free Estimates</span>
+                    <span class="pill" data-en="✓ Emergency Service" data-es="✓ Servicio de Emergencia">✓ Emergency Service</span>
+                    <span class="pill" data-en="✓ Credit Cards Accepted" data-es="✓ Tarjetas de Crédito">✓ Credit Cards Accepted</span>
+                    <span class="pill">✓ Se Habla Español</span>
+                    <span class="pill" data-en="✓ No Payment Until Complete" data-es="✓ Sin Pago Hasta Terminar">✓ No Payment Until Complete</span>
+                </div>
+
+                <div class="about-stats">
+                    <div class="a-stat">
+                        <span class="a-stat-num">80+</span>
+                        <span class="a-stat-lbl" data-en="5-Star Reviews" data-es="Reseñas de 5 Estrellas">5-Star Reviews</span>
+                    </div>
+                    <div class="a-stat">
+                        <span class="a-stat-num">11+</span>
+                        <span class="a-stat-lbl" data-en="Years Experience" data-es="Años de Experiencia">Years Experience</span>
+                    </div>
+                    <div class="a-stat">
+                        <span class="a-stat-num">3</span>
+                        <span class="a-stat-lbl" data-en="Platforms · All 5 Stars" data-es="Plataformas · Todas 5 Estrellas">Platforms · All 5 Stars</span>
+                    </div>
+                    <div class="a-stat">
+                        <span class="a-stat-num">7</span>
+                        <span class="a-stat-lbl" data-en="Days a Week Available" data-es="Días a la Semana">Days a Week Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== GALLERY ==================== -->
+<section id="gallery">
+    <div class="container">
+        <span class="sec-label" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</span>
+        <h2 class="sec-title" data-en="Before & After" data-es="Antes y Después">Before & After</h2>
+        <div class="green-bar"></div>
+        <p class="sec-sub" data-en="Every yard tells a story. Here's some of ours." data-es="Cada jardín cuenta una historia. Aquí están algunas de las nuestras.">Every yard tells a story. Here's some of ours.</p>
+
+        <div class="gallery-grid reveal">
+            <div class="g-item wide" onclick="openLightbox('/images/1.webp')">
+                <img src="/images/1.webp" alt="Tree Ops crew working on massive live oak, American flag, Arlington TX" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Live Oak Trim · Arlington" data-es="Poda de Roble · Arlington">Live Oak Trim · Arlington</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/13.webp')">
+                <img src="/images/13.webp" alt="Large oak tree canopy after Tree Ops trimming, Arlington TX" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Oak Canopy · After" data-es="Dosel de Roble · Después">Oak Canopy · After</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/2.webp')">
+                <img src="/images/2.webp" alt="Before and after front yard tree trim Arlington TX" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Before & After · Trim" data-es="Antes y Después · Poda">Before & After · Trim</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/8.webp')">
+                <img src="/images/8.webp" alt="Before and after canopy lift tree service DFW" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Before & After · Canopy Lift" data-es="Antes y Después · Elevación">Before & After · Canopy Lift</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/11.webp')">
+                <img src="/images/11.webp" alt="Before and after large oak trim, home curb appeal improved" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Before & After · Large Oak" data-es="Antes y Después · Roble">Before & After · Large Oak</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/12.webp')">
+                <img src="/images/12.webp" alt="Before and after overgrown tree cleared and trimmed Arlington" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Before & After · Major Trim" data-es="Antes y Después · Poda Mayor">Before & After · Major Trim</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/14.webp')">
+                <img src="/images/14.webp" alt="Before and after tree trim two story home DFW" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Before & After · Two-Story Home" data-es="Antes y Después · Casa">Before & After · Two-Story Home</span></div>
+            </div>
+            <div class="g-item wide" onclick="openLightbox('/images/6.webp')">
+                <img src="/images/6.webp" alt="Storm split tree trunk removed by Tree Ops emergency service" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Storm Damage Removal" data-es="Remoción de Daño por Tormenta">Storm Damage Removal</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/10.webp')">
+                <img src="/images/10.webp" alt="DFW home with healthy maintained trees after Tree Ops service" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Curb Appeal · DFW" data-es="Atractivo Visual · DFW">Curb Appeal · DFW</span></div>
+            </div>
+            <div class="g-item" onclick="openLightbox('/images/15.webp')">
+                <img src="/images/15.webp" alt="Clean single tree after professional trimming Arlington TX" loading="lazy">
+                <div class="g-overlay"><span class="g-label" data-en="Clean Finish · Trim" data-es="Acabado Limpio">Clean Finish · Trim</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()" aria-label="Close photo">×</button>
+    <img id="lb-img" src="" alt="Tree Ops project photo" onclick="event.stopPropagation()">
+</div>
+
+<!-- ==================== SERVICE AREA ==================== -->
+<section id="service-area">
+    <div class="container">
+        <div class="area-grid">
+            <div class="reveal">
+                <span class="sec-label" data-en="Where We Work" data-es="Dónde Trabajamos">Where We Work</span>
+                <h2 class="sec-title" data-en="Serving All of DFW" data-es="Sirviendo Todo el DFW">Serving All of DFW</h2>
+                <div class="green-bar"></div>
+                <p style="color:var(--white-dim);margin-bottom:2rem;font-size:0.95rem"
+                   data-en="Based in Arlington — we serve the entire DFW Metroplex. Not sure we cover your area? Just call."
+                   data-es="Con base en Arlington — servimos a todo el Área Metropolitana del DFW. ¿No está seguro? Simplemente llame.">
+                    Based in Arlington — we serve the entire DFW Metroplex. Not sure we cover your area? Just call.
+                </p>
+                <div class="city-grid">
+                    <span class="city-tag">Arlington</span>
+                    <span class="city-tag">Grand Prairie</span>
+                    <span class="city-tag">Fort Worth</span>
+                    <span class="city-tag">Mansfield</span>
+                    <span class="city-tag">Kennedale</span>
+                    <span class="city-tag">Euless</span>
+                    <span class="city-tag">Bedford</span>
+                    <span class="city-tag">Hurst</span>
+                    <span class="city-tag">Irving</span>
+                    <span class="city-tag">Burleson</span>
+                    <span class="city-tag">Crowley</span>
+                    <span class="city-tag">Duncanville</span>
+                    <span class="city-tag">Cedar Hill</span>
+                    <span class="city-tag">Midlothian</span>
+                    <span class="city-tag" data-en="& All of DFW" data-es="& Todo el DFW">& All of DFW</span>
+                </div>
+            </div>
+
+            <div class="area-callout reveal">
+                <h3 data-en="Emergency Response" data-es="Respuesta de Emergencia">Emergency Response</h3>
+                <p style="margin-bottom:0"
+                   data-en="Storms hit hard in DFW. Tree Ops offers emergency tree service for fallen trees, storm damage, and hazardous limbs — any time of day. We respond fast and get your property safe."
+                   data-es="Las tormentas golpean fuerte en el DFW. Tree Ops ofrece servicio de emergencia para árboles caídos, daños por tormenta y ramas peligrosas — a cualquier hora. Respondemos rápido y aseguramos su propiedad.">
+                    Storms hit hard in DFW. Tree Ops offers emergency tree service for fallen trees, storm damage, and hazardous limbs — any time of day. We respond fast and get your property safe.
+                </p>
+                <a href="tel:2142632976" class="emerg-btn">
+                    🚨 <span data-en="Call Now for Emergency Service" data-es="Llame Ahora para Emergencias">Call Now for Emergency Service</span>
+                </a>
+                <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07)">
+                    <p style="font-size:0.82rem;color:var(--steel-light);margin-bottom:0.4rem"
+                       data-en="Also serving areas not listed — call to confirm."
+                       data-es="También servimos áreas no listadas — llame para confirmar.">
+                        Also serving areas not listed — call to confirm.
+                    </p>
+                    <p style="font-size:0.8rem;color:var(--green)">Se Habla Español &nbsp;·&nbsp; (214) 263-2976</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="faq">
+    <div class="container">
+        <span class="sec-label" data-en="Common Questions" data-es="Preguntas Frecuentes">Common Questions</span>
+        <h2 class="sec-title" data-en="FAQ" data-es="Preguntas y Respuestas">FAQ</h2>
+        <div class="green-bar"></div>
+
+        <div class="faq-list reveal">
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    <span data-en="Do you offer free estimates?" data-es="¿Ofrecen estimaciones gratuitas?">Do you offer free estimates?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-ans">
+                    <div class="faq-ans-inner"
+                         data-en="Yes — always. Call us or submit the form below and we'll schedule a free on-site estimate. We typically respond the same day."
+                         data-es="Sí — siempre. Llámenos o envíe el formulario y programaremos una estimación gratuita en el sitio. Normalmente respondemos el mismo día.">
+                        Yes — always. Call us or submit the form below and we'll schedule a free on-site estimate. We typically respond the same day.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    <span data-en="When do I pay?" data-es="¿Cuándo pago?">When do I pay?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-ans">
+                    <div class="faq-ans-inner"
+                         data-en="Not until the job is completely done — every last detail. No payment until you're satisfied with the result. That's how Tree Ops operates."
+                         data-es="No hasta que el trabajo esté completamente terminado — hasta el último detalle. Sin pago hasta que esté satisfecho con el resultado. Así es como opera Tree Ops.">
+                        Not until the job is completely done — every last detail. No payment until you're satisfied with the result. That's how Tree Ops operates.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    <span data-en="How fast can you respond?" data-es="¿Qué tan rápido responden?">How fast can you respond?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-ans">
+                    <div class="faq-ans-inner"
+                         data-en="We typically respond within minutes. Same-day estimates are common, and most jobs are completed within a few days of the estimate. Emergency situations are always prioritized."
+                         data-es="Normalmente respondemos en minutos. Las estimaciones el mismo día son comunes y la mayoría de los trabajos se completan a los pocos días. Las emergencias siempre son prioridad.">
+                        We typically respond within minutes. Same-day estimates are common, and most jobs are completed within a few days of the estimate. Emergency situations are always prioritized.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    <span data-en="Do you clean up after the job?" data-es="¿Limpian después del trabajo?">Do you clean up after the job?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-ans">
+                    <div class="faq-ans-inner"
+                         data-en="Every time — without exception. Limbs, debris, sawdust — all of it goes. Our customers have described it as 'resort-type standards.' That's the bar we hold ourselves to on every single job."
+                         data-es="Siempre — sin excepción. Ramas, escombros, aserrín — todo se va. Nuestros clientes lo han descrito como 'estándares de resort'. Ese es el nivel que mantenemos en cada trabajo.">
+                        Every time — without exception. Limbs, debris, sawdust — all of it goes. Our customers have described it as 'resort-type standards.' That's the bar we hold ourselves to on every single job.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    <span data-en="Are you licensed and insured?" data-es="¿Están licenciados y asegurados?">Are you licensed and insured?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-ans">
+                    <div class="faq-ans-inner"
+                         data-en="Yes. Tree Ops is fully licensed and insured. We're happy to provide documentation before work begins — just ask."
+                         data-es="Sí. Tree Ops está completamente licenciado y asegurado. Con gusto proporcionamos documentación antes de comenzar — solo pregunte.">
+                        Yes. Tree Ops is fully licensed and insured. We're happy to provide documentation before work begins — just ask.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    <span data-en="When is the best time to trim trees in Texas?" data-es="¿Cuándo es mejor podar en Texas?">When is the best time to trim trees in Texas?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-ans">
+                    <div class="faq-ans-inner"
+                         data-en="Late winter to early spring is ideal for most trees — before new growth begins. However, dead limbs, storm damage, and safety hazards should be addressed year-round. We'll advise you honestly during your free estimate."
+                         data-es="El invierno tardío o la primavera temprana es ideal para la mayoría de los árboles — antes de que comience el nuevo crecimiento. Sin embargo, las ramas muertas y los daños por tormenta deben atenderse durante todo el año. Le asesoraremos honestamente durante su estimación gratuita.">
+                        Late winter to early spring is ideal for most trees — before new growth begins. However, dead limbs, storm damage, and safety hazards should be addressed year-round. We'll advise you honestly during your free estimate.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT / FOOTER ==================== -->
+<section id="contact">
+    <div class="container">
+        <div class="footer-grid">
+
+            <!-- Form -->
+            <div class="reveal">
+                <span class="sec-label" data-en="Get In Touch" data-es="Contáctenos">Get In Touch</span>
+                <h2 class="sec-title" data-en="Get a Free Estimate" data-es="Obtén una Estimación Gratis">Get a Free Estimate</h2>
+                <div class="green-bar"></div>
+
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display:none"><label>Skip: <input name="bot-field"></label></p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="f-name" data-en="Your Name" data-es="Su Nombre">Your Name</label>
+                            <input type="text" id="f-name" name="name" required placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="f-phone" data-en="Phone Number" data-es="Número de Teléfono">Phone Number</label>
+                            <input type="tel" id="f-phone" name="phone" required placeholder="(817) 555-0100">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-email" data-en="Email Address" data-es="Correo Electrónico">Email Address</label>
+                        <input type="email" id="f-email" name="email" placeholder="you@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-service" data-en="Service Needed" data-es="Servicio Necesario">Service Needed</label>
+                        <select id="f-service" name="service">
+                            <option value="" data-en="Select a service..." data-es="Seleccione un servicio...">Select a service...</option>
+                            <option value="trimming"    data-en="Tree Trimming & Pruning"   data-es="Poda y Recorte de Árboles">Tree Trimming & Pruning</option>
+                            <option value="removal"     data-en="Tree Removal"               data-es="Remoción de Árboles">Tree Removal</option>
+                            <option value="stump"       data-en="Stump Grinding"             data-es="Eliminación de Tocones">Stump Grinding</option>
+                            <option value="storm"       data-en="Storm Damage Response"      data-es="Daños por Tormenta">Storm Damage Response</option>
+                            <option value="landscaping" data-en="Shrub Care & Landscaping"   data-es="Arbustos y Paisajismo">Shrub Care & Landscaping</option>
+                            <option value="firewood"    data-en="Firewood"                   data-es="Leña">Firewood</option>
+                            <option value="other"       data-en="Other"                      data-es="Otro">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-msg" data-en="Tell Us About Your Project" data-es="Cuéntenos Sobre Su Proyecto">Tell Us About Your Project</label>
+                        <textarea id="f-msg" name="message" placeholder="Number of trees, approximate size, any urgency..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit"
+                            data-en="Send My Free Estimate Request"
+                            data-es="Enviar Mi Solicitud de Estimación Gratis">
+                        Send My Free Estimate Request
+                    </button>
+                </form>
+            </div>
+
+            <!-- Info -->
+            <div class="footer-info reveal">
+                <div>
+                    <div class="f-logo">TREE OPS</div>
+                    <div class="f-tagline" data-en="Well done. On time. On budget." data-es="Bien hecho. A tiempo. En presupuesto.">Well done. On time. On budget.</div>
+                </div>
+
+                <div class="f-nap">
+                    <div class="nap-row">
+                        <span class="nap-icon">📍</span>
+                        <span>2001 Rutland Dr, Arlington, TX 76002</span>
+                    </div>
+                    <div class="nap-row">
+                        <span class="nap-icon">📞</span>
+                        <a href="tel:2142632976" class="f-phone">(214) 263-2976</a>
+                    </div>
+                    <div class="nap-row">
+                        <span class="nap-icon">🕐</span>
+                        <span data-en="Open 7 Days a Week" data-es="Abierto 7 Días a la Semana">Open 7 Days a Week</span>
+                    </div>
+                    <div class="nap-row">
+                        <span class="nap-icon">⚡</span>
+                        <span data-en="Emergency Service Available" data-es="Servicio de Emergencia Disponible">Emergency Service Available</span>
+                    </div>
+                    <div class="nap-row">
+                        <span class="nap-icon">🗣️</span>
+                        <span>Se Habla Español</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--steel-light);margin-bottom:0.7rem"
+                       data-en="Follow Us" data-es="Síguenos">Follow Us</p>
+                    <div class="f-social">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Google">G</a>
+                    </div>
+                </div>
+
+                <div class="f-cta-box">
+                    <p data-en="Ready to get started?" data-es="¿Listo para comenzar?">Ready to get started?</p>
+                    <a href="tel:2142632976">(214) 263-2976</a>
+                    <small data-en="Free estimates · Fast response · Se Habla Español" data-es="Estimaciones gratis · Respuesta rápida · Se Habla Español">Free estimates · Fast response · Se Habla Español</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="yr"></span> Tree Ops Tree Service &nbsp;·&nbsp; Arlington, TX &nbsp;·&nbsp; All Rights Reserved</span>
+            <div class="footer-bottom-links">
+                <a href="/privacy-policy" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
+                <span>·</span>
+                <span data-en="Licensed & Insured" data-es="Licenciado y Asegurado">Licensed & Insured</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== JS ==================== -->
+<script>
+/* Year */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---- Language Toggle ---- */
+const LANG_KEY = 'treeops-lang';
+
+function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem(LANG_KEY, lang);
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (!text) return;
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = text;
+        } else if (el.tagName === 'OPTION') {
+            el.textContent = text;
+        } else {
+            el.textContent = text;
+        }
+    });
+
+    // Update meta description
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) {
+        desc.content = lang === 'es'
+            ? 'Tree Ops – Expertos en servicio de árboles en Arlington, TX. Poda, remoción, tocones, tormentas y paisajismo. 5 estrellas. Estimaciones gratis. (214) 263-2976.'
+            : "Tree Ops – Arlington, TX's most trusted tree service. Trimming, removal, stump grinding, storm damage & landscaping. 5-star rated. Free estimates. (214) 263-2976.";
+    }
+
+    // Toggle button active states
+    ['btn-en','btn-es'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        const isActive = id.endsWith(lang);
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+}
+
+// Init from storage
+const stored = localStorage.getItem(LANG_KEY) || 'en';
+if (stored === 'es') setLang('es');
+
+/* ---- Hamburger ---- */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+function openMenu() {
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.setAttribute('aria-label', 'Close menu');
+}
+function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Open menu');
+}
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); closeLightbox(); } });
+
+/* ---- FAQ Accordion ---- */
+document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+
+/* ---- Lightbox ---- */
+function openLightbox(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+/* ---- Scroll Reveal ---- */
+const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            revObs.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+</script>
+
+</body>
+</html>

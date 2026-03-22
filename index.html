@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Tree Ops Tree Service | Arlington, TX | (214) 263-2976</title>
     <meta name="description" content="Tree Ops – Arlington, TX's most trusted tree service. Tree trimming, removal, stump grinding, storm damage, and landscaping. 5-star rated across Google, HomeAdvisor & Yelp. Free estimates. Call (214) 263-2976.">
 
@@ -953,7 +953,7 @@
             .mobile-menu { display: flex; }
             section { padding: 4rem 1.2rem; }
             .services-grid { grid-template-columns: 1fr; }
-            #navbar { background: #0a0a0a; backdrop-filter: none; }
+            #navbar { background: #0a0a0a; backdrop-filter: none; padding-top: env(safe-area-inset-top); height: calc(var(--nav-h) + env(safe-area-inset-top)); }
         }
         @media (max-width: 520px) {
             .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
